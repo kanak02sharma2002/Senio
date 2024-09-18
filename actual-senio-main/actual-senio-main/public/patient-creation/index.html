@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Form</title>
+    <link rel="stylesheet" href="../patient-creation/styles.css" />
+  </head>
+  <body>
+    <h1>Patient Form</h1>
+    <form id="patientForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required /><br /><br />
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <br /><br />
+      <label for="BMI">BMI:</label>
+      <input
+        type="number"
+        id="BMI"
+        name="BMI"
+        step="0.01"
+        required
+      /><br /><br />
+      <label for="systolic">Systolic:</label>
+      <input type="number" id="systolic" name="systolic" required /><br /><br />
+      <label for="diastolic">Diastolic:</label>
+      <input
+        type="number"
+        id="diastolic"
+        name="diastolic"
+        required
+      /><br /><br />
+      <label for="cholestrol">Cholestrol:</label>
+      <input
+        type="number"
+        id="cholestrol"
+        name="cholestrol"
+        required
+      /><br /><br />
+      <label for="diabetes">Diabetes:</label>
+      <input type="number" id="diabetes" name="diabetes" required /><br /><br />
+      <label for="smoked">Smoked:</label>
+      <input type="number" id="smoked" name="smoked" required /><br /><br />
+      <label for="paratype">Paralysis:</label>
+      <input type="text" id="paratype" name="paratype" required /><br /><br />
+      <label for="deseverity">Diseaseseverity:</label>
+      <input
+        type="number"
+        id="dseverity"
+        name="dseverity"
+        step="0.01"
+        required
+      /><br /><br />
+      <label for="condition">Condition:</label>
+      <textarea id="condition" name="condition" required></textarea><br /><br />
+      <label for="Severity">Severity:</label>
+      <select id="severity" name="severity" required>
+        <option value="red">red</option>
+        <option value="orange">orange</option>
+        <option value="yellow">yellow</option>
+      </select>
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+    <script src="../patient-creation/scripts.js"></script>
+  </body>
+</html>

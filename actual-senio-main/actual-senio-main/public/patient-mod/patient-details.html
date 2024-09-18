@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="../patient-mod/patient-details.css" />
+    <script src="../patient-mod/patient-details.js"></script>
+  </head>
+  <body>
+    <h1>Patient Details</h1>
+
+    <!-- Search bar -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search patients..."
+      oninput="searchPatients()"
+    />
+
+    <!-- Filter options -->
+    <select id="filterProperty" onchange="filterPatients()">
+      <option value="name">Name</option>
+      <option value="age">Age</option>
+      <option value="gender">Gender</option>
+      <option value="condition">Condition</option>
+    </select>
+    <input
+      type="text"
+      id="filterValue"
+      placeholder="Filter value..."
+      oninput="filterPatients()"
+    />
+
+    <!-- Patient list -->
+    <ul id="patientList"></ul>
+
+    <!-- Edit form -->
+    <div id="editForm" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeEditForm()">&times;</span>
+        <h2>Edit Patient</h2>
+        <form id="editPatientForm">
+          <label for="editName">Name:</label>
+          <input
+            type="text"
+            id="editName"
+            name="editName"
+            required
+          /><br /><br />
+          <label for="editAge">Age:</label>
+          <input
+            type="number"
+            id="editAge"
+            name="editAge"
+            required
+          /><br /><br />
+          <label for="editGender">Gender:</label>
+          <select id="editGender" name="editGender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option></select
+          ><br /><br />
+          <label for="editCondition">Condition:</label>
+          <textarea id="editCondition" name="editCondition" required></textarea
+          ><br /><br />
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

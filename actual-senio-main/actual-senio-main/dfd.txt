@@ -1,0 +1,108 @@
+project/
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── styles.css
+│   │   └── scripts.js
+│   └── ...
+│
+├── backend/
+│   ├── models/
+│   │   └── patient.model.js
+│   ├── controllers/
+│   │   └── patient.controller.js
+│   ├── routes/
+│   │   └── patient.routes.js
+│   ├── app.js
+│   └── ...
+│
+└── ...
+
+I am creaing a website there are two groups of users: Admins and guardians. Admins enter patient details and Guardians view details that they are allowed to see. Now give me complete code(frontend and backend) for webpage where admin enters patient details and those data go to mongo db. I am using model-view-controller design
+
+
+categorisation
+
+project/
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── styles.css
+│   │   └── scripts.js
+│   └── ...
+│
+├── backend/
+│   ├── models/
+│   │   └── patient.model.js
+│   ├── controllers/
+│   │   └── patient.controller.js
+│   ├── routes/
+│   │   └── patient.routes.js
+│   ├── app.js
+│   └── ...
+│
+└── ...
+
+app.js
+
+// app.js
+
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const path = require("path");
+const bodyParser = require("body-parser");
+const patientRoutes = require("./routes/patient.routes");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Routes
+app.use("/api/patients", patientRoutes);
+
+mongoose
+  .connect(
+    "mongodb+srv://nevdev:klsN3It9JVJHHIOp@cluster1.cj5oewz.mongodb.net/seniot?retryWrites=true&w=majority&appName=cluster1",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Internal Server Error" });
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+give me codes for
+
+ 
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── styles.css
+│   │   └── scripts.js
+│   └── ...
+│
+├── 
+│   ├── models/
+│   │   └── patient.model.js
+│   ├── controllers/
+│   │   └── patient.controller.js
+│   ├── routes/
+│   │   └── patient.routes.js
+
+with relevance to above webpage such that
